@@ -23,14 +23,14 @@ public class Main {
                 "One-hundred Dollars"
         };
         String[] cashInDrawer = inputObj.nextLine().split(" ");
-        String[] annotatedCashInDrawer = new String[9];
+        String[][] annotatedCashInDrawer = new String[9][2];
         for (int i = 0; i< 9;i++){
-            annotatedCashInDrawer[i] = String.format("%s: %s", cashDenominations[i], (i<=cashInDrawer.length-1 ? cashInDrawer[i] : 0));
+            annotatedCashInDrawer[i] = new String[] {cashDenominations[i], (i <= cashInDrawer.length - 1 ? cashInDrawer[i] : "0")};
         }
         System.out.printf("Purchase Price: %s Cash Amount: %s Cash in Drawer: %s%n",
                 purchasePrice,
                 cashAmount,
-                Arrays.toString(annotatedCashInDrawer));
+                Arrays.deepToString(annotatedCashInDrawer));
 
 
 
